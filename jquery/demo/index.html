@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+      console.log(jQuery);
+      console.log($());
+
+      function triggeredEvent(){
+        // alert("jquery .click() was triggered");
+        $('.main').append('<h1>Hello World</h1>');
+
+
+        console.log($(this));
+        var text = $(this).siblings('.main').children('ul').children().text();
+
+        console.log(text);
+        // $('h1').on('click', function(){
+        //   alert('the h1 was clicked');
+        // })
+
+      }
+
+
+      $(document).ready(function(){
+        // alert('working jQuery');
+        $('.button').click(triggeredEvent);
+
+      })
+
+
+    </script>
+  </head>
+  <body>
+    <button class="button" type="button" name="button">click me</button>
+    <div class="main">
+      <ul>
+        <li>Name</li>
+      </ul>
+    </div>
+    <!-- <button type="button" name="button">click me</button>
+
+
+
+    <script type="text/javascript">
+
+    document.getElementsByTagName('button')[0].addEventListener("click", function(){
+      alert("button was clicked");
+    })
+    </script> -->
+
+  </body>
+</html>
