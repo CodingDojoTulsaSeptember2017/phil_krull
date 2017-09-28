@@ -1,0 +1,11 @@
+img {
+  display: block;
+}
+
+img:not(:last-of-type) {
+  margin-bottom: 5px;
+}
+.images {
+  margin: 0 auto;
+  width: 200px;
+}

@@ -1,0 +1,50 @@
+.container {
+  border: 10px ridge darkgrey;
+  height: 600px;
+  width: 800px;
+  margin: 0 auto;
+  background-color: black;
+}
+.arena {
+  width: 250px;
+  height: 150px;
+  border: 5px ridge darkgrey;
+  border-radius: 5px;
+  margin: 125px auto 0;
+  background-color: grey;
+}
+.arena h1 {
+  text-align: center;
+}
+.arena .location {
+  display: inline-block;
+  vertical-align: top;
+  width: 75px;
+  height: 25px;
+}
+.arena .location:first-of-type, .arena .location:nth-of-type(4) {
+  margin-left: 10px;
+}
+.arena .location:first-of-type, .arena .location:nth-of-type(2), .arena button:nth-of-type(3) {
+  margin-bottom: 10px;
+}
+select {
+  margin-left: 10px;
+}
+/* .arena .fight {
+  margin-top: 10px;
+  margin-left: 90px;
+  padding: 5px 20px;
+  border-radius: 10px;
+} */
+.ninja {
+  height: 300px;
+  width: 200px;
+  margin-left: 150px;
+  /* margin-top: 150px; */
+  display: inline-block;
+  z-index: 2;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+}
