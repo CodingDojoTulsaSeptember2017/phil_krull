@@ -19,3 +19,8 @@
   * .js - s code
 ### groupActivites
 * dojo arena
+### Python
+* Fundamentals
+  * listsToDict
+    * while loop zipping two list together, one as the keys and the other as the values
+    * using pythons builtin zip() to do the same
