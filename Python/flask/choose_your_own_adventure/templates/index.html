@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Choose you own adventure</title>
+</head>
+<body>
+  <div class="container">
+    <div class="main">
+      <form action="/create" method="post">
+        <p>Name:</p>
+        <input type="text" name="name">
+        <p>Email:</p>
+        <input type="email" name="email">
+        <input type="hidden" name="this_is_hidden" value="not from input box">
+        <input type="submit" value="add">
+      </form>
+    </div>
+    <table>
+      <tr>
+        <td>Name:</td>
+        <td>{{ session['input_name'] }}</td>
+      </tr>
+      <tr>
+        <td>Email:</td>
+        <td>{{ session['email'] }}</td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>

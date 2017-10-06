@@ -1,0 +1,20 @@
+form {
+    display: inline;
+    margin-left: 40px;
+}
+h1 {
+    text-align: center;
+}
+.forms {
+    margin: 0 auto;
+    width: 300px;
+}
+a {
+    display: block;
+    margin-top: 50px;
+}
+.container {
+    width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+}

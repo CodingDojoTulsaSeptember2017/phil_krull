@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+    <title>Rock, Paper, Scissors</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Wins: {{ session['wins'] }}</h2>
+        <h2>Losses: {{ session['loses'] }}</h2>
+        <h2>Ties: {{ session['ties'] }}</h2>
+        <h1>Rock Paper Scissors</h1>
+        <div class="forms">
+
+            <form action="/process_play" method="post">
+                <input type="hidden" name="choice_from_client" value="0">
+                <input type="submit" value="Rock">
+            </form>
+            <form action="/process_play" method="post">
+                <input type="hidden" name="choice_from_client" value="1">
+                <input type="submit" value="Paper">
+            </form>
+            <form action="/process_play" method="post">
+                <input type="hidden" name="choice_from_client" value="2">
+                <input type="submit" value="Scissors">
+            </form>
+        </div>
+        {% with messages = get_flashed_messages() %}
+            {% for message in messages %}
+                <p>{{ message }}</p>
+            {% endfor %}
+        {% endwith %}
+        <a href="/start_over">Reset</a>
+    </div>
+</body>
+</html>
