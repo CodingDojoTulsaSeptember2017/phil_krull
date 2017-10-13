@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Email Validation</title>
+</head>
+<body>
+    <div class="continar">
+        <h1>Emails Entered</h1>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            {% for message in messages %}
+                <p>{{message}}</p>
+            {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <table>
+            {% for email in emails %}
+            <tr>
+                <td>{{ email['email'] }}</td>
+                <td>{{ email['created_at'] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <a href="/">Go home</a>
+    </div>
+</body>
+</html>
