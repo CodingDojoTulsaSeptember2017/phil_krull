@@ -1,0 +1,21 @@
+.building{
+    width: 150px;
+    height: 150px;
+    margin-right: 30px;
+    border: 1px solid black;
+    vertical-align: top;
+    display: inline-block;
+    text-align: center;
+}
+.activites{
+    width: 710px;
+    height: 150px;
+    border: 1px solid black;
+    overflow: scroll;
+}
+.red{
+    color: red;
+}
+.green{
+    color: green;
+}

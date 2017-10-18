@@ -1,0 +1,59 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ninja Gold</title>
+    {% load static %}
+    {% load humanize %}
+    <link rel="stylesheet" href="{% static 'first_app/index.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h2>Your Gold: <span>{{ request.session.total_gold }}</span></h2>
+        <div class="building">
+            <h4>Farm</h4>
+            <h6>(earn 10 - 20)</h6>
+            <form action="/process_money" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="building" value="farm">
+                <input type="submit" value="Find Gold">
+            </form>
+        </div>
+        <div class="building">
+            <h4>Cave</h4>
+            <h6>(earn 5 - 10)</h6>
+            <form action="/process_money" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="building" value="cave">
+                <input type="submit" value="Find Gold">
+            </form>
+        </div>
+        <div class="building">
+            <h4>House</h4>
+            <h6>(earn 2 - 5)</h6>
+            <form action="/process_money" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="building" value="house">
+                <input type="submit" value="Find Gold">
+            </form>
+        </div>
+        <div class="building">
+            <h4>Casino</h4>
+            <h6>(earns/takes 0 - 50)</h6>
+            <form action="/process_money" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="building" value="casino">
+                <input type="submit" value="Find Gold">
+            </form>
+        </div>
+        <h3>Activities:</h3>
+
+        <div class="activites">
+            {% for result in request.session.activity_log reversed %}
+                <p class={{ result.class }}>{{result.sentence | naturaltime}}</p>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
