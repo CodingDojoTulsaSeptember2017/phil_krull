@@ -7,3 +7,4 @@ def index(request):
 
 def create(request):
     return redirect('users:index')
+

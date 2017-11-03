@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Socket Demo</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script type ="text/javascript" src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+    <button>click me</button>
+    <div class="server"></div>
+    <script>
+        var socket  = io.connect();
+
+            $('button').click(function(){
+                console.log('button clicked');
+                // emit an event to server
+                socket.emit('button clicked', {reason: 'button was pressed'})
+            })
+
+            socket.on('event from server', function(data){
+                console.log(`event from server: ${data.reason}`);
+                $('.server').append(`<p>${data.reason}</p>`);
+            })
+    </script>
+</body>
+</html>
