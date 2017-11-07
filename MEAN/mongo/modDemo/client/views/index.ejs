@@ -1,0 +1,36 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Demo</title>
+</head>
+<body>
+    <div class="container">
+        <h1>All Users:</h1>
+        <ul>
+            <% for(let user in users){ %>
+                <hr>
+                <li>Name: <%= users[user].name %></li>
+                <li>From: <%= users[user].location %></li> 
+            <% } %> 
+        </ul>
+        <h1>Add Users</h1>
+        <form action="/users" method="post">
+            <table>
+                <tr>
+                    <td>Name:</td>
+                    <td><input type="text" name="name"></td>
+                </tr>
+                <tr>
+                    <td>Location:</td>
+                    <td><input type="text" name="location"></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Add"></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>
