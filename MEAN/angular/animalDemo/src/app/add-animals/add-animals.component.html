@@ -1,0 +1,12 @@
+<h1>{{ title }}</h1>
+<form (submit)='onSubmit()' #formData='ngForm'>
+  <p>Name: <input type="text" name='name' #name = 'ngModel' [(ngModel)]='animal.name' required></p>
+  <p>Location: <input type="text" name='location' #location = 'ngModel' [(ngModel)]='animal.location' minlength='2'></p>
+  <p># of legs: <input type="text" name='numberOfLegs' #numberOfLegs = 'ngModel' [(ngModel)]='animal.numberOfLegs'></p>
+  <p>Size: <input type="text" name='size' #size = 'ngModel' [(ngModel)]='animal.size'></p>
+  <input *ngIf='formData.valid' type="submit" value='Add Animal'>
+</form>
+
+{{ formData.valid | json }}
+{{ name.valid | json  }}
+{{ location.valid }}

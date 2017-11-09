@@ -1,0 +1,14 @@
+<table border='1'>
+  <tr>
+    <th>Name:</th>
+    <th>Location:</th>
+    <th># of legs:</th>
+    <th>Size:</th>
+  </tr>
+  <tr *ngFor='let animal of all_animals'>
+    <td>{{ animal.name }}</td>
+    <td>{{ animal.location }}</td>
+    <td>{{ animal.numberOfLegs }}</td>
+    <td>{{ animal.size }}</td>
+  </tr>
+</table>

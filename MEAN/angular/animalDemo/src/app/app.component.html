@@ -1,0 +1,6 @@
+<h1>
+  Welcome to {{title}}!
+</h1>
+<app-list-animals [all_animals] = 'animals'></app-list-animals>
+<app-add-animals (eventToParent)='addToAnimalList($event)'></app-add-animals>
+
