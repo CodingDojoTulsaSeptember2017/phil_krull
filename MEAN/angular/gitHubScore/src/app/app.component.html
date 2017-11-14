@@ -1,0 +1,8 @@
+<h1>GitHub Score</h1>
+<form (submit)='onSubmit()'>
+  <input type="text" name='userName' [(ngModel)]='user.userName'>
+  <input type="submit" value='Find'>
+</form>
+{{ user | json }}
+<h1>Your Score: {{ numberOfRepos }} </h1>
+<h1>Your Follower: {{ numberOfFollowers }} </h1>
