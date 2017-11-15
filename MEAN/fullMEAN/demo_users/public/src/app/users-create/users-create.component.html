@@ -1,0 +1,7 @@
+<h1>Add Users</h1>
+<form (submit)='onSubmit()'>
+  <p>Name: <input name='name' type='text' [(ngModel)]='user.name'></p>
+  <p>Age: <input name='age' type='number' [(ngModel)]='user.age'></p>
+  <input type="submit" name="" value="Add">
+</form>
+{{ user | json }}

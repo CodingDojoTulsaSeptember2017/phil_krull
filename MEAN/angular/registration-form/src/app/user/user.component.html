@@ -1,0 +1,74 @@
+<div class="register">
+  <h3>Account Information</h3>
+  <div class="" *ngIf='success_message'>
+    <p class='success'>{{ success_message }}</p>
+  </div>
+  <form (submit)='register(formData)' #formData='ngForm'>
+    <table>
+      <tr>
+        <td class='first'>*First Name:</td>
+        <td><input type="text" name="first_name" value="" [(ngModel)]='user.first_name' required minlength='2' maxlength='24' #first_name='ngModel'></td>
+        <td class='errors' *ngIf='!first_name.valid && (first_name.touched && first_name.errors.minlength)'>The required length is {{ first_name.errors?.minlength?.requiredLength }}, your length is {{ first_name.errors.minlength.actualLength }}</td>
+      </tr>
+      <tr>
+        <td class='first'>*Last Name:</td>
+        <td><input type="text" name="last_name" value="" [(ngModel)]='user.last_name' required minlength='2' maxlength='24' #last_name='ngModel'></td>
+        <td class='errors' *ngIf='!last_name.valid && (last_name.touched && last_name.errors.minlength)'>The required length is {{ last_name.errors?.minlength?.requiredLength }}, your length is {{ last_name.errors.minlength.actualLength }}</td>
+      </tr>
+      <tr>
+        <td class='first'>*Email:</td>
+        <td><input type="text" name="email" value="" [(ngModel)]='user.email' #email='ngModel' pattern='^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$'></td>
+        <td class='errors'*ngIf='!email.valid && (email.touched && email.errors.minlength)'>Must enter a valid email address</td>
+      </tr>
+      <tr>
+        <td class='first'>*Password:</td>
+        <td><input type="password" name="password" value="" [(ngModel)]='user.password' required minlength='8' maxlength='24' #password='ngModel'></td>
+        <td class='errors' *ngIf='!password.valid && (password.touched && password.errors.minlength)'>The required length is {{ password.errors?.minlength.requiredLength }}, your length is {{ password.errors.minlength.actualLength }}</td>
+      </tr>
+      <tr>
+        <td class='first'>*Password Confirmation:</td>
+        <td><input type="password" name="confirm_password" value="" [(ngModel)]='user.confirm_password' required minlength='8' maxlength='24' #confirm_password='ngModel'></td>
+        <td class='errors' *ngIf='!confirm_password.valid && (confirm_password.touched && confirm_password.errors.minlength)'>The required length is {{ confirm_password.errors?.minlength.requiredLength }}, your length is {{ confirm_password.errors.minlength.actualLength }}</td>
+        <td class='errors' *ngIf='(!confirm_password.valid && confirm_password.touched && confirm_password.errors.minlength) || (!password.valid && password.touched && password.errors.minlength)'><span [hidden]='!password == confirm_password'>Passwords must match</span></td>
+      </tr>
+      <tr>
+        <td class='first'>*Street Address:</td>
+        <td><input type="text" name="address" value="" [(ngModel)]='user.address' required minlength='2' maxlength='24' #address='ngModel'></td>
+        <td class='errors' *ngIf='!address.valid && (address.touched && address.errors.minlength)'>The required length is {{ address.errors.minlength.requiredLength }}, your length is {{ address.errors.minlength.actualLength }}</td>
+      </tr>
+      <tr>
+        <td class='first'>Unit/Apt #:</td>
+        <td><input type="text" name="apt" value="" [(ngModel)]='user.apt' minlength='1' maxlength='24' #apt='ngModel'></td>
+        <td class='errors' *ngIf='!apt.valid && (apt.touched && apt.errors.minlength)'>{{ apt.errors | json }}</td>
+      </tr>
+      <tr>
+        <td class='first'>*City:</td>
+        <td><input type="text" name="city" value="" [(ngModel)]='user.city' required minlength='2' maxlength='24' #city='ngModel'></td>
+        <td class='errors' *ngIf='!city.valid && (city.touched && city.errors.minlength)'>{{ city.errors | json }}</td>
+      </tr>
+      <tr>
+        <td class='first'>*State:</td>
+        <td>
+          <select class="" name="state" [(ngModel)]='user.state' #state='ngModel' required>
+            <option *ngFor='let state of states' [value]="state">{{ state }}</option>
+          </select>
+        </td>
+        <td class='errors'*ngIf='!state.valid && state.touched'>Must provide a state</td>
+      </tr>
+      <tr>
+        <td class='first'>*I'm feeling lucky:</td>
+        <td>
+          <input type="radio" name="feeling" value="yes" #feeling='ngModel' [(ngModel)]='user.feeling' required>Yes
+          <input type="radio" name="feeling" value="no" #feeling='ngModel' [(ngModel)]='user.feeling' required>No
+        </td>
+        <td class='errors'*ngIf='!feeling.valid && feeling.touched'>Must select a feeling</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td *ngIf='formData.form.valid && formData.form.touched && user.password == user.confirm_password'><input type="submit" name="" value="Register"></td>
+      </tr>
+    </table>
+  </form>
+</div>
+<pre>
+</pre>

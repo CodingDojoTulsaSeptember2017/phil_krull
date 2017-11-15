@@ -1,0 +1,15 @@
+.register{
+  border: 1px solid black;
+  width: 500px;
+  margin-left: 30px;
+  padding: 20px;
+}
+.first {
+  text-align: right;
+}
+.success{
+  color: green;
+}
+.errors{
+  color: red;
+}
