@@ -1,0 +1,11 @@
+<h3>Bucket Lists</h3>
+<form (submit)='onSubmit()' #formData = 'ngForm'>
+  <p>Name:</p>
+  <input type="text" [(ngModel)]='user.name' name = 'name' #name = 'ngModel' minlength="2">
+  <div *ngIf='formData.valid && formData.touched'>
+    <input type="submit" value='Login'>
+  </div>
+</form>
+
+{{ formData.valid | json }}
+{{ user | json }}

@@ -1,0 +1,4 @@
+<h3>List of other Users(click to view profile)</h3>
+<p *ngFor='let user of all_users'>
+  <a [routerLink]="['/users', user._id]">{{ user.name }}</a>
+</p>

@@ -1,4 +1,4 @@
 db.sqlite3
 *.pyc
-node_module
-dists
+node_modules/
+dist/

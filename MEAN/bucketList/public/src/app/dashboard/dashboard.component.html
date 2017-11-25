@@ -1,0 +1,20 @@
+<p>
+  dashboard works!
+</p>
+<button (click)='logout()'>Logout</button>
+<h3>Welcome {{ user.name }}! </h3>
+<form (submit)='onSubmit()'>
+  <input type="text" name='title' placeholder="Enter a title" [(ngModel)]='item.title' minlength="5">
+  <input type="text" name='description' placeholder="Enter a description" [(ngModel)]='item.description' minlength="10">
+  <select name='selected_user' [(ngModel)]='item.selected_user'>
+    <option *ngFor='let user of users' value='{{ user._id }}'>{{ user.name }}</option>
+  </select>
+  <input type='submit' value='Add'>
+</form>
+
+<h4>Before I die:</h4>
+<div *ngFor='let item of items'>
+  <p>{{ item.created_by.name }} | {{ item.title }} - {{ item.description }}....  {{ item.createdAt | date: 'short' }}</p>
+</div>
+
+<app-list-users [all_users] = 'users'></app-list-users>
